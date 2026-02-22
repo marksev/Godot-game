@@ -59,7 +59,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Favourites',
+          'Favorites',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -195,7 +195,7 @@ class _EmptyFavorites extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'No favourites yet',
+            'No favorites yet',
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: Theme.of(context).colorScheme.outline,
                 ),

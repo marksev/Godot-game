@@ -59,7 +59,7 @@ class _MainNavigationState extends State<MainNavigation> {
           NavigationDestination(
             icon: Icon(Icons.favorite_outline),
             selectedIcon: Icon(Icons.favorite),
-            label: 'Favourites',
+            label: 'Favorites',
           ),
         ],
       ),
