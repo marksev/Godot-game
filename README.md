@@ -1,66 +1,66 @@
-# Daily Affirmations
+# BlockBlast – Godot 4 Puzzle Game
 
-A Flutter app with beautiful, swipeable affirmation cards across 10 categories. Save your favourites locally and revisit them any time.
+A Block Blast style puzzle game built with **Godot 4.2+**.
 
-## Features
+## How to Play
 
-- **10 categories** — Self Love, Confidence, Success, Wealth, Health, Motivation, Gratitude, Positivity, Relationships, Discipline
-- **Swipeable cards** — scroll vertically through 10 affirmations per category on a gradient full-screen card
-- **Favourites** — tap the heart icon to save any affirmation; view all saved ones on the Favourites tab
-- **Share** — share any affirmation with one tap
-- **Bottom navigation** — Home | Favourites
+1. **Drag** one of the 3 pieces at the bottom onto the 8×8 grid.
+2. Pieces must fit in empty cells – they **cannot overlap**.
+3. Fill a complete **row or column** to clear it and earn bonus points.
+4. Place all 3 pieces to receive a fresh set.
+5. The game ends when **no piece can be placed** anywhere on the board.
 
-## Tech stack
+## Scoring
 
-| Layer | Choice |
+| Action | Points |
 |---|---|
-| Framework | Flutter (stable channel) |
-| State management | Provider (`ChangeNotifier`) |
-| Persistence | `shared_preferences` |
-| Sharing | `share_plus` |
+| Each cell placed | 10 pts |
+| First line cleared | 80 pts |
+| Second line (combo) | 160 pts |
+| Each additional line | +80 pts more |
 
-## Folder structure
+## Setup
+
+### Requirements
+- **Godot 4.2** or newer  
+  Download from https://godotengine.org/download
+
+### Running the Game
+
+1. Open **Godot Engine**
+2. Click **Import** → select the `project.godot` file in this folder
+3. Click **Open** then **Import & Edit**
+4. Press **F5** (or the ▶ Play button) to run
+
+### Export (optional)
+- Go to **Project → Export**
+- Add your desired platform preset
+- Click **Export Project**
+
+## Project Structure
 
 ```
-lib/
-├── data/          # Hardcoded affirmations dataset
-├── models/        # CategoryData model
-├── providers/     # FavoritesProvider (ChangeNotifier)
-├── screens/       # HomeScreen, AffirmationScreen, FavoritesScreen
-├── services/      # PreferencesService (SharedPreferences wrapper)
-├── widgets/       # CategoryCard, AffirmationCard
-└── main.dart
+BlockBlast/
+├── project.godot       # Godot project configuration
+├── icon.svg            # App icon
+├── scenes/
+│   └── Main.tscn       # Main game scene
+└── scripts/
+    └── Main.gd         # All game logic (GDScript)
 ```
 
-## Running locally
+## Controls
 
-```bash
-# 1. Install Flutter (stable): https://docs.flutter.dev/get-started/install
-# 2. Clone the repo
-git clone <repo-url>
-cd <repo-name>
+| Input | Action |
+|---|---|
+| Click & Drag | Pick up and move a piece |
+| Release | Place the piece |
 
-# 3. Install dependencies
-flutter pub get
+## Tips & Tricks
 
-# 4. Run on a connected device or emulator
-flutter run
-```
+- Plan ahead! Look at all 3 pieces before placing any.
+- Try to clear multiple lines at once for big combo bonuses.
+- Keep the board open – don't box yourself into a corner.
 
-> `android/local.properties` is listed in `.gitignore` and is generated automatically by the Flutter toolchain — you do not need to create it manually.
-
-## Downloading the APK from GitHub Actions
-
-Every push to `main` (and every pull request targeting `main`) triggers the **Build Release APK** workflow:
-
-1. Go to the **Actions** tab of this repository on GitHub.
-2. Click the latest **Build Release APK** run.
-3. Scroll to the **Artifacts** section at the bottom of the run summary.
-4. Download **app-release** — it contains `app-release.apk`, which can be side-loaded on any Android device with "Install unknown apps" enabled.
-
-## Building the APK locally
-
-```bash
-flutter build apk --release
-# Output: build/app/outputs/flutter-apk/app-release.apk
-```
+---
+Made with ❤️ using Godot 4 GDScript
