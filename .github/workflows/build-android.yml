@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  GODOT_VERSION: "4.2.2"
+  GODOT_VERSION: "4.6.1"
   GODOT_RELEASE: "stable"
   EXPORT_NAME: "BlockBlast"
   EXPORT_PRESET: "Android"
